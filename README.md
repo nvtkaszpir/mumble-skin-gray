@@ -35,3 +35,7 @@ background, yet the text is gray
 
 http://creativecommons.org/licenses/by-sa/4.0/
 More detail in LICENSE.md
+
+# Preview #
+
+![Preview hosted on imgur](http://i.imgur.com/RRwJPjo.png)
