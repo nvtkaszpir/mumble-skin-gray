@@ -26,8 +26,9 @@ then press OK.
 1. Channel/User comment shows with standard yellow color in the 
 background, yet the text is gray
 2. Will have to fix tables/list boder on select
-3. not thoroughly tested ;)
-
+3. Not thoroughly tested ;)
+4. URL links in Dialog boxes are blue
+5. Bottom area in wizard dialog boxes is white
 
 # License #
 

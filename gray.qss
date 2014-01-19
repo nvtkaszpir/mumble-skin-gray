@@ -1,10 +1,10 @@
 /* 
 
 Name:		Gray Mumble skin
-Version:	0.8
+Version:	0.9
 Mumble version: 1.4.x
 Author:		_KaszpiR_ kaszpir@gmail.com
-Date:		2014.01.19, 02:05  (yyyy.mm.dd)
+Date:		2014.01.19, 13:51  (yyyy.mm.dd)
 Contact:	#hlds.pl @ irc.QuakeNet.org
 
 Comments:
@@ -15,6 +15,10 @@ Todo:
 - fix tooltip when looking channel description
 - fix tableviews on mouse click border appearance
 - any option to enhance channel view tree?
+- bottom area in wizard dialog boxes is white
+
+Known issues:
+- URL links in Dialog boxes are blue
 */
 
 /***************************************************************************
@@ -23,7 +27,7 @@ Todo:
 
 * { /* all elements */
 	selection-background-color: #aaa;
-    window: #2b2b2b;
+    /* window: #2b2b2b; */ /* this property does not exist in mumble shins */
     /*
     background: #212121;
     background: #2b2b2b;
@@ -907,11 +911,11 @@ a {
 }
 
 .log-userjoin {
-        color: #088A08;
+        color: #088a08;
 }
 
 .log-userleave {
-        color: #DF0101;
+        color: #df0101;
 }
 
 .log-userkicked {
