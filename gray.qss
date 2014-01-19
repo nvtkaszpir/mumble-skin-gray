@@ -4,7 +4,7 @@ Name:		Gray Mumble skin
 Version:	0.10
 Mumble version: 1.4.x
 Author:		_KaszpiR_ kaszpir@gmail.com
-Date:		2014.01.19, 13: 51  (yyyy.mm.dd)
+Date:		2014.01.19, 22:15  (yyyy.mm.dd)
 Contact:	#hlds.pl @ irc.QuakeNet.org
 
 Comments:
@@ -13,9 +13,8 @@ Total rewrite of my old skin.
 
 Todo:
 - fix tooltip when looking channel description
-- fix tableviews on mouse click border appearance
 - any option to enhance channel view tree?
-- bottom area in wizard dialog boxes is white
+- bottom area in wizard dialog box is white
 
 Known issues:
 - URL links in Dialog boxes are blue
@@ -40,7 +39,7 @@ QWidget { /* anything that is a widget */
 }
 
 QWidget#qteRichText { /* rich text editor with icons on top like bold, italic etc*/
-	background: #fff;
+	background: #ccc; /* avoid eye burn */
 	color: #000;
 }
 
@@ -49,6 +48,7 @@ QAbstractScrollArea {
 	alternate-background-color: #333;
     color: #aaa;
     background: #212121;
+	border: 0px;
 } 
 
 QSizeGrip { /* window resize icon */
@@ -59,6 +59,7 @@ QSizeGrip { /* window resize icon */
 	width: 16px;
 	height: 16px;
 }
+
 /***************************************************************************
 	Tabs
 ***************************************************************************/
@@ -118,7 +119,6 @@ QTabBar::tab:hover:bottom {
 }
 
 QTabBar::tab:selected:bottom {
-
 }
 
 QTabBar::tab:!selected:bottom {
@@ -129,13 +129,24 @@ QLineEdit {	/* input like filenames */
 	background: #2b2b2b;
 	border: 0px;
 } 
-QDateEdit {} 
-QDateTimeEdit {} 
-QTextEdit {} 
-QTimeEdit {} 
+
+QDateEdit {
+} 
+
+QDateTimeEdit {
+} 
+
+QTextEdit {
+} 
+
+QTimeEdit {
+
+} 
+
 QSpinBox {
 	height: 2em;
 }
+
 QDoubleSpinBox {
 	height: 2em;
 }	
@@ -153,7 +164,6 @@ QComboBox {
 }
 
 QComboBox:!editable {
-
 }
 
 QComboBox:!editable:on, QComboBox::drop-down:editable:on {
@@ -196,13 +206,15 @@ QPushButton {
 	border: 1px solid #111111;
 	margin: 0.2em;
 	padding: 0.5em;
-	padding-left: 1.5em;
-	padding-right: 1.5em;
+	padding-left: 2em;
+	padding-right: 2em;
+	min-height: 1em;
 }
 
 QPushButton::!pressed {
 	background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #3b3b3b, stop: 1 #212121); 
 }
+
 QPushButton::pressed {
 }
 
@@ -220,6 +232,7 @@ QPushButton::flat {
 }
 
 QPushButton::checked {
+	color: #fff;
 }
 
 QPushButton::disabled { /* disabled buttons */
@@ -227,9 +240,18 @@ QPushButton::disabled { /* disabled buttons */
 	background: #212121;
 }
 
+QPushButton#qpb_add {
+}
+
+QPushButton#qpb_remove {
+	min-width: 4em;
+}
+
+
 /***************************************************************************
 	Main app window
 ***************************************************************************/
+
 QMainWindow {
 }
 
@@ -258,9 +280,11 @@ QMainWindow::separator:hover
 {
     background: #686868;
 }
+
 /***************************************************************************
 	simple text in dialog box
 ***************************************************************************/
+
 QLabel {
 }
 
@@ -299,10 +323,11 @@ QHeaderView{
 	background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #3b3b3b, stop: 1 #212121); 
 
 }
+
 QHeaderView::item {
 	color: #000;
 	border: 0px solid #6c6c6c;
- }
+}
 
 QHeaderView::section {
 	/* table/list view headers */
@@ -310,15 +335,15 @@ QHeaderView::section {
 	color: #bbb;
 	border: 2px solid #2b2b2b; /* fix for windows */
 	padding: 0.2em;
- }
+}
 
 QHeaderView::down-arrow {
 	color: #888;
- }
+}
 
 QHeaderView::up-arrow {
 	color: #888;
- }
+}
 
 
 QListView {
@@ -327,7 +352,6 @@ QListView {
 }
 
 QListView::item {
-
 }
 
 
@@ -442,6 +466,8 @@ QDialog {
 	User list in channel tree view
 ******************************************/
 
+/* notice, this also influences checkboxes in tree views */
+
 QTreeView::item {
 }
 
@@ -449,33 +475,23 @@ QTreeView::item:!hover {
 }
 
 QTreeView::item:hover {
-	background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #6b6b6b, stop: 1 #212121); 
-	color: #fff;
 }
 
 QTreeView::item:selected {
-	background: #6b6b6b;
-	color: #fff;
+	color: #888;
 }
 
 QTreeView::item:selected:active {
-	background: #6b6b6b;
 	color: #fff;
-}
-QTreeView::item:selected:active:hover {
-	background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #6b6b6b, stop: 1 #212121); 
-	color: #fff;
+	background: #888;
 }
 
 QTreeView::item:selected:!active {
-	background: #4b4b4b;
 	color: #fff;
-
+	background: #888;
 }
 
-QTreeWidget::item {
 
-}
 /*
 QTreeView#qtvUsers {
 	border: 1px solid #000;
@@ -532,11 +548,10 @@ QTreeView#qtvUsers::branch:has-children:!has-siblings:closed {
 
 QTreeView#qtvUsers::branch:closed:has-children:has-siblings {
 	image: url(skin:branch-closed.png);
-
 }
+
 QTreeView#qtvUsers::branch:open:has-children:!has-siblings{
 	image: url(skin:branch-open.png);
-
 }
 
 QTreeView#qtvUsers::branch:open:has-children:has-siblings {
@@ -571,6 +586,13 @@ QTreeView#qtvUsers::branch:open:has-children:has-siblings {
 	background: none;
 }
 
+/****************************************
+	 Tree widget, for example plugin list (not channels and users)
+ ******************************************/
+
+QTreeWidget::item {
+
+}
 
 /****************************************
 	 Main menu 
@@ -578,7 +600,7 @@ QTreeView#qtvUsers::branch:open:has-children:has-siblings {
 
 QMenuBar {
 	font-weight: bold;
-	border: 1px solid black;
+	border: 1px solid #000;
 	border-bottom: 1px solid #222;
 	background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #3b3b3b, stop: 1 #212121); 
 
@@ -601,6 +623,7 @@ QMenuBar::item:pressed {
 /*****************************************************
 	Toolbar with icons like connect, record etc
 *******************************************************/
+
 QToolBar {
 	border-radius: 0px; /* if omitted produces weird white border */
 	border: 0px solid #222;
@@ -614,9 +637,11 @@ QToolBar:vertical {
 QToolBar::handle {
 	border: 1px solid #000;
 }
+
 QToolBar::separator:vertical {
 	border: 1px solid transparent;
 }
+
 QToolBar::separator:horizontal {
 	border-left: 1px solid #000;
 }
@@ -643,13 +668,15 @@ QToolButton::hover:top:bottom:horizontal {
 QToolButton::hover:left:right:vertical {
 }
 
-/*****************************************************
-	Dropdown menu 
-******************************************************/
+/*************************************************************
+	Dropdown menu from top menu or to perform action on user
+**************************************************************/
+
 QMenu {
-	border: 0px solid #000; /* gray border, onlyy size can be changed*/
+	border: 1px solid #6b6b6b; /* gray border, onlyy size can be changed*/
 	padding: 0px;
 	margin: 0px; /* some spacing around the menu */
+	border-radius: 4px; 
 }
 
 QMenu::item {
@@ -659,10 +686,12 @@ QMenu::item {
 }
 
 QMenu::item::default {
+	color: #fff;
 }
 
 QMenu::item:selected {
 	background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #6b6b6b, stop: 1 #212121); 
+	color: #fff;
 }
 
 QMenu::item:pressed {
@@ -678,7 +707,7 @@ QMenu::item:disabled:selected {
 
 QMenu::separator {
 	height: 1px;
-	border-top: 1px solid #000;
+	border-top: 1px solid #444;
 }
 
 QMenu::indicator {
@@ -691,6 +720,7 @@ QMenu::indicator {
 /******************
 	Scroll Bars
 *******************/
+
 QScrollBar {
 	width: 1em;
 	margin: 0 0;
@@ -728,7 +758,10 @@ QScrollBar::sub-line:vertical {
 	subcontrol-origin: margin;
 }
 
-QScrollBar::add-line:vertical:hover, 
+QScrollBar::add-line:vertical:hover {
+	border: 1px solid #000;
+}
+
 QScrollBar::sub-line:vertical:hover {
 	border: 1px solid #000;
 }
@@ -770,7 +803,11 @@ QScrollBar::sub-line:horizontal {
 	subcontrol-origin: margin;
 }
 
-QScrollBar::add-line:horizontal:hover, QScrollBar::sub-line:horizontal:hover {
+QScrollBar::add-line:horizontal:hover {
+	border: 1px solid #000;
+}
+
+QScrollBar::sub-line:horizontal:hover {
 	border: 1px solid #000;
 }
 
@@ -837,12 +874,15 @@ QSlider::handle:disabled {
 	border: 1px solid #212121;
 	color: #f00;
 }
+
 /****************************************
 	 Wizard dialog boxes 
  ****************************************/
+
 QWizard  {
 	background: #6b6b6b; 
 }
+
 QWizardPage  {
 	background: #6b6b6b; 
 }
@@ -850,6 +890,7 @@ QWizardPage  {
 /****************************************
 	 Event log 
  ****************************************/
+
 QTextBrowser#qteLog {
 	background-color: #212121;
 	border: 1px solid #000;
@@ -857,7 +898,7 @@ QTextBrowser#qteLog {
 }
 
 a {
-	color: #ff790c; 
+	color: #ee7700; 
 	text-decoration:none; 
 }
 
@@ -865,100 +906,108 @@ a {
 	Log lines
 ***************************************************************************/
 
+/* most of those does not work, they are part of my custom mumble build */
+
 .log-time {
-        color: #666;
+    color: #666;
 }
 
 .log-server {
-        color: #fff;
+    color: #fff;
 }
 
 .log-channel {
-        color: #aae;
+	/* hmmm */
+    color: #aae;
 }
 
 .log-target {
-        color: #ee0;
+    color: #ee7700;
 }
 
 .log-source {
-        color: #ee0;
+    color: #ee7700;
 }
 
 .log-privilege {
-        color: #aee;
+    color: #aee;
 }
 
 .log-criticalerror {
-        color: #f00;
+    color: #f00;
 }
 
 .log-permissiondenied {
-        color: #f00;
+    color: #f00;
 }
 
 .log-selfmute {
-        color: #bbf;
+    color: #bbf;
 }
 
 .log-serverconnected {
-        color: #bfb;
+    color: #bfb;
 }
 
 .log-serverdisconnected {
-        color: #fbb;
+    color: #fbb;
 }
 
 .log-channeljoin {
-        color: #8f8;
+    color: #8f8;
 }
 
 .log-channelleave {
-        color: #aaa;
+    color: #aaa;
 }
 
 .log-youmutedother {
-        color: #a88;
+    color: #a88;
 }
 
 .log-youmuted {
-        color: #a88;
+    color: #a88;
 }
 
 .log-youkicked {
-        color: #a88;
+    color: #a88;
 }
 
 .log-recording {
-        color: #fff;
+    color: #fff;
 }
 
 .log-warning {
-        color: #ff8;
+    color: #ff8;
 }
 
 .log-information {
-        color: #aaa;
+    color: #aaa;
 }
 
 .log-userjoin {
-        color: #088a08;
+    color: #088a08;
 }
 
 .log-userleave {
-        color: #df0101;
+    color: #df0101;
 }
 
 .log-userkicked {
-        color: #f00;
+    color: #f00;
 }
 
 .log-otherselfmute {
-        color: #88a;
+    color: #88a;
 }
 
 .log-othermutedother {
-        color: #88a;
+    color: #88a;
 }
 
+.log-debuginfo {
+}
+
+.log-textmessage {
+}
 
