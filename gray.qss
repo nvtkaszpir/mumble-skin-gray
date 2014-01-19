@@ -1,10 +1,10 @@
 /* 
 
 Name:		Gray Mumble skin
-Version:	0.9
+Version:	0.10
 Mumble version: 1.4.x
 Author:		_KaszpiR_ kaszpir@gmail.com
-Date:		2014.01.19, 13:51  (yyyy.mm.dd)
+Date:		2014.01.19, 13: 51  (yyyy.mm.dd)
 Contact:	#hlds.pl @ irc.QuakeNet.org
 
 Comments:
@@ -26,7 +26,7 @@ Known issues:
 ***************************************************************************/
 
 * { /* all elements */
-	selection-background-color: #aaa;
+	selection-background-color: #212121;
     /* window: #2b2b2b; */ /* this property does not exist in mumble shins */
     /*
     background: #212121;
@@ -40,8 +40,8 @@ QWidget { /* anything that is a widget */
 }
 
 QWidget#qteRichText { /* rich text editor with icons on top like bold, italic etc*/
-	background:#fff;
-	color:#000;
+	background: #fff;
+	color: #000;
 }
 
 QAbstractScrollArea {
@@ -52,8 +52,8 @@ QAbstractScrollArea {
 } 
 
 QSizeGrip { /* window resize icon */
-	margin-top:0.2em;
-	margin-left:0.2em;
+	margin-top: 0.2em;
+	margin-left: 0.2em;
 	border-bottom: 1px solid #000;
 	border-right: 1px solid #000;
 	width: 16px;
@@ -126,17 +126,18 @@ QTabBar::tab:!selected:bottom {
 
 
 QLineEdit {	/* input like filenames */
-	background:#2b2b2b;
+	background: #2b2b2b;
+	border: 0px;
 } 
 QDateEdit {} 
 QDateTimeEdit {} 
 QTextEdit {} 
 QTimeEdit {} 
 QSpinBox {
-	height:2em;
+	height: 2em;
 }
 QDoubleSpinBox {
-	height:2em;
+	height: 2em;
 }	
 
 /***************************************************************************
@@ -144,11 +145,11 @@ QDoubleSpinBox {
 ***************************************************************************/
 
 QComboBox {
-	height:1.5em;
-	border-radius:4px;
+	height: 1.5em;
+	border-radius: 4px;
 	min-width: 6em;
-	background:#888;
-	color:#000;
+	background: #888;
+	color: #000;
 }
 
 QComboBox:!editable {
@@ -192,11 +193,11 @@ QComboBox::down-arrow:on {
 QPushButton {
 	background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #3b3b3b, stop: 1 #212121); 
 	border-radius: 4px;
-	border:1px solid #111111;
-	margin:0.2em;
-	padding:0.5em;
-	padding-left:1.5em;
-	padding-right:1.5em;
+	border: 1px solid #111111;
+	margin: 0.2em;
+	padding: 0.5em;
+	padding-left: 1.5em;
+	padding-right: 1.5em;
 }
 
 QPushButton::!pressed {
@@ -222,7 +223,7 @@ QPushButton::checked {
 }
 
 QPushButton::disabled { /* disabled buttons */
-	color:#444;
+	color: #444;
 	background: #212121;
 }
 
@@ -269,15 +270,15 @@ QFrame {
 QGroupBox {
 	border: 1px solid #2b2b2b;
 	border-radius: 4px;
-	padding:0.5em;
-	padding-top:2em;
+	padding: 0.5em;
+	padding-top: 2em;
 }
 
 QGroupBox::title {
 	border: 1px solid #2b2b2b;
 	border-radius: 2px;
-	padding:0.5em 1em;
-	background:#2b2b2b;
+	padding: 0.5em 1em;
+	background: #2b2b2b;
 	background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #3b3b3b, stop: 1 #212121); 
 
 }
@@ -285,16 +286,16 @@ QGroupBox::title {
 QToolTip {
 	border: 0px solid transparent;
 	border-radius: 4px; 
-	padding:0.5em;
-	color:#aaa;
+	padding: 0.5em;
+	color: #aaa;
 	background: #444;
 }
 
 QHeaderView{
 	show-decoration-selected: 1; /* make the selection span the entire width of the view */
 	color: #000;
-	padding:0px;
-	margin:0px;
+	padding: 0px;
+	margin: 0px;
 	background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #3b3b3b, stop: 1 #212121); 
 
 }
@@ -307,8 +308,8 @@ QHeaderView::section {
 	/* table/list view headers */
 	background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #3b3b3b, stop: 1 #212121); 
 	color: #bbb;
-	border:2px solid #2b2b2b; /* fix for windows */
-	padding:0.2em;
+	border: 2px solid #2b2b2b; /* fix for windows */
+	padding: 0.2em;
  }
 
 QHeaderView::down-arrow {
@@ -321,7 +322,8 @@ QHeaderView::up-arrow {
 
 
 QListView {
-	border:0px;
+	border: 0px;
+
 }
 
 QListView::item {
@@ -345,26 +347,66 @@ QListView::item:hover {
 	background-color: #333; /* in lists, shows alternate color, instead of white */
 }
 
+/*****************************************************
+	Lists 
+*****************************************************/
+
 
 QListWidget {
 	show-decoration-selected: 1; /* make the selection span the entire width of the view */
+	background-color: #202020; /* in lists, shows alternate color, instead of white */
+	border: 1px solid #2b2b2b;
+
+}
+
+QListWidget::item {
+	padding: 1em;
 }
 
 QListWidget::item:alternate {
+	padding: 1em;
 }
 
 QListWidget::item:selected {
+	background-color: #616161; /* in lists, shows alternate color, instead of white */
+	border: 1px solid #2b2b2b;
+	padding: 0em;
 }
 
 QListWidget::item:selected:!active {
+	background-color: #616161; /* in lists, shows alternate color, instead of white */
+	border: 1px solid #2b2b2b;
+	padding: 0em;
 }
 
 QListWidget::item:selected:active {
+	background-color: #616161; /* in lists, shows alternate color, instead of white */
+	border: 1px solid #2b2b2b;
+	padding: 0em;
 }
 
 QListWidget::item:hover {
+	show-decoration-selected: 1; /* make the selection span the entire width of the view */
+	background-color: #414141; /* in lists, shows alternate color, instead of white */
+	border: 1px solid #2b2b2b;
+	padding: 0em; /* avoid padding too far to the right on hover due to inherit */
 }
 
+/*****************************************************
+	List in the confifiguration, on the left 
+*****************************************************/
+
+QListWidget#qlwIcons {
+}
+
+QListWidget#qlwBans:item {
+	padding-top:0.2em;
+	padding-bottom:0.2em;
+}
+
+/*****************************************************
+	Tables 
+*****************************************************/
 
 QTableView {
 	show-decoration-selected: 0; /* make the selection span the entire width of the view */
@@ -393,7 +435,7 @@ QTableView::item:hover {
 QDialog {
 	background: #212121;
 	border: 1px solid #000;
-	padding: 0.2em 0.2em 0.2em 0.2em;
+	padding: 0.2em;
 }
 
 /****************************************
@@ -410,15 +452,15 @@ QTreeView::item:hover {
 }
 
 QTreeView::item:selected {
-	color:#000;
+	color: #000;
 }
 
 QTreeView::item:selected:active {
-	color:#000;
+	color: #000;
 }
 
 QTreeView::item:selected:!active {
-	color:#000;
+	color: #000;
 
 }
 
@@ -428,7 +470,7 @@ QTreeWidget::item {
 
 QTreeView#qtvUsers {
 	border: 1px solid #000;
-	padding: 0.2em 0.2em 0.2em 0.2em;
+	padding: 0.2em;
 	show-decoration-selected: 1;
 }
 
@@ -449,15 +491,15 @@ QTreeView#qtvUsers::item:!hover {
 
 
 QTreeView#qtvUsers::item:selected {
-	color:#000;
+	color: #000;
 }
 
 QTreeView#qtvUsers::item:selected:active {
-	color:#000;
+	color: #000;
 }
 
 QTreeView#qtvUsers::item:selected:!active {
-	color:#000;
+	color: #000;
 }
 
 QTreeView#qtvUsers::branch:has-siblings:!adjoins-item {
@@ -529,7 +571,7 @@ QMenuBar {
 	font-weight: bold;
 	border: 1px solid black;
 	border-bottom: 1px solid #222;
-		background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #3b3b3b, stop: 1 #212121); 
+	background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #3b3b3b, stop: 1 #212121); 
 
 }
 
@@ -539,7 +581,6 @@ QMenuBar::item {
 	spacing: 1em; /* spacing between menu bar items */
 	border-radius: 4px;
 	background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #3b3b3b, stop: 1 #212121); 
-
 }
 
 QMenuBar::item:selected {
@@ -554,7 +595,6 @@ QMenuBar::item:pressed {
 QToolBar {
 	border-radius: 0px; /* if omitted produces weird white border */
 	border: 0px solid #222;
-
 }
 
 QToolBar:vertical {
@@ -575,7 +615,7 @@ QToolBar::separator:horizontal {
 QToolButton {
 	border-radius: 4px;
 	border: 1px solid transparent;
-	padding:0em 0.5em;
+	padding: 0em 0.5em;
 }
 
 QToolButton::hover {
@@ -606,7 +646,7 @@ QMenu {
 QMenu::item {
 	padding: 0.2em 1.5em;
 	border: 1px solid transparent;
-	border-radius:2px;
+	border-radius: 2px;
 }
 
 QMenu::item::default {
@@ -620,11 +660,11 @@ QMenu::item:pressed {
 }
 
 QMenu::item:disabled {
-	color:#000;
+	color: #000;
 }
 
 QMenu::item:disabled:selected {
-	color:#000;
+	color: #000;
 }
 
 QMenu::separator {
@@ -638,41 +678,13 @@ QMenu::indicator {
 	padding-left: 2px;
 }
 
-/*****************************************************
-	List in the confifiguration, on the left 
-*****************************************************/
-
-QListWidget#qlwIcons {
-}
-
-QListWidget#qlwIcons::item {
-	padding:1em;
-}
-
-QListWidget#qlwIcons::item:alternate {
-}
-
-QListWidget#qlwIcons::item:selected {
-
-}
-
-QListWidget#qlwIcons::item:selected:!active {
-}
-
-QListWidget#qlwIcons::item:selected:active {
-}
-
-QListWidget#qlwIcons::item:hover {
-	padding:0em; /* avoid padding too far to the right on hover due to inherit */
-
-}
 
 /******************
 	Scroll Bars
 *******************/
 QScrollBar {
 	width: 1em;
-	margin:0 0;
+	margin: 0 0;
 	border-radius: 4px;
 	background: #181818; 
 
@@ -680,7 +692,7 @@ QScrollBar {
 
 QScrollBar:vertical {
 	width: 1em;
-	margin:0 0;
+	margin: 0 0;
 	border-radius: 4px;
 }
 
@@ -692,7 +704,7 @@ QScrollBar::handle:vertical {
 }
 
 QScrollBar::handle:vertical:hover {
-	background:#6b6b6b; 
+	background: #6b6b6b; 
 }
 
 QScrollBar::add-line:vertical {
@@ -722,7 +734,7 @@ QScrollBar::sub-line:vertical {
 
 QScrollBar:horizontal {
 	height: 1em;
-	margin:0 0;
+	margin: 0 0;
 	border-radius: 4px;
 }
 
@@ -734,7 +746,7 @@ QScrollBar::handle:horizontal {
 }
 
 QScrollBar::handle:horizontal:hover {
-	background:#6b6b6b; 
+	background: #6b6b6b; 
 }
 
 QScrollBar::add-line:horizontal {
@@ -770,55 +782,65 @@ Qslider {
 }
 
 QSlider::groove:horizontal {
- border-bottom: 1px dotted #888;
- height: 0;
- margin: 2px 0;
+	border-bottom: 1px dotted #888;
+	height: 0;
+	margin: 2px 0;
 }
 
 QSlider::groove:vertical {
- border-right: 1px dotted #888;
- width: 0;
- margin: 0 2px;
+	border-right: 1px dotted #888;
+	width: 0;
+	margin: 0 2px;
 }
 
 QSlider::groove:disabled {
- border-color: #888;
+	border-color: #888;
 }
 
 QSlider::handle:horizontal {
- width: 12px;
- margin: -5px 0;
+	width: 12px;
+	margin: -5px 0;
 }
 
 QSlider::handle:vertical {
- height: 12px;
- margin: 0 -5px;
+	height: 12px;
+	margin: 0 -5px;
 }
 
 QSlider::handle {
- background: qlineargradient(x1:0, y1:0, x2:1, y2:1, stop:0 #6b6b6b, stop:1 #313131);
- border: 1px solid #212121;
- border-radius: 3px;
+	background: qlineargradient(x1:0, y1:0, x2:1, y2:1, stop:0 #6b6b6b, stop: 1 #313131);
+	border: 1px solid #212121;
+	border-radius: 3px;
 }
 
 QSlider::handle:hover {
- background: qlineargradient(x1:0, y1:0, x2:0, y2:1, stop:0 #6b6b6b, stop:1 #313131);
- border: 1px solid #212121;
+	background: qlineargradient(x1:0, y1:0, x2:0, y2:1, stop:0 #6b6b6b, stop: 1 #313131);
+	border: 1px solid #212121;
 }
 
 QSlider::handle:pressed {
- background: qlineargradient(x1:0, y1:0, x2:0, y2:1, stop:0 #6b6b6b, stop:1 #313131);
- border: 1px solid #212121;
+	background: qlineargradient(x1:0, y1:0, x2:0, y2:1, stop:0 #6b6b6b, stop: 1 #313131);
+	border: 1px solid #212121;
 }
 
 QSlider::handle:disabled {
- background: qlineargradient(x1:0, y1:0, x2:0, y2:1, stop:0 #6b6b6b, stop:1 #313131);
- border: 1px solid #212121;
- color: #f00;
+	background: qlineargradient(x1:0, y1:0, x2:0, y2:1, stop:0 #6b6b6b, stop: 1 #313131);
+	border: 1px solid #212121;
+	color: #f00;
 }
 /****************************************
+	 Wizard dialog boxes 
+ ****************************************/
+QWizard  {
+	background: #6b6b6b; 
+}
+QWizardPage  {
+	background: #6b6b6b; 
+}
+
+/****************************************
 	 Event log 
- ******************************************/
+ ****************************************/
 QTextBrowser#qteLog {
 	background-color: #212121;
 	border: 1px solid #000;
@@ -826,8 +848,8 @@ QTextBrowser#qteLog {
 }
 
 a {
-	 color: #ff790c; 
-	 text-decoration:none; 
+	color: #ff790c; 
+	text-decoration:none; 
 }
 
 /***************************************************************************
@@ -929,3 +951,5 @@ a {
 .log-othermutedother {
         color: #88a;
 }
+
+

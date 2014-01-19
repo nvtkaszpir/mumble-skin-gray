@@ -22,13 +22,14 @@ browse to the directory where you cloned the repo and select .qss
 file that is in there. Make sure to select Plastique window style, and
 then press OK.
 
+# ToDo #
+1. Will have to fix tables/list boder on select
+
 # Known issues and todo #
 1. Channel/User comment shows with standard yellow color in the 
 background, yet the text is gray
-2. Will have to fix tables/list boder on select
-3. Not thoroughly tested ;)
-4. URL links in Dialog boxes are blue
-5. Bottom area in wizard dialog boxes is white
+2. URL links in Dialog boxes are blue
+3. Bottom area in wizard dialog boxes is white under Windows
 
 # License #
 
