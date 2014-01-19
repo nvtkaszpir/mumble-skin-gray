@@ -449,25 +449,34 @@ QTreeView::item:!hover {
 }
 
 QTreeView::item:hover {
+	background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #6b6b6b, stop: 1 #212121); 
+	color: #fff;
 }
 
 QTreeView::item:selected {
-	color: #000;
+	background: #6b6b6b;
+	color: #fff;
 }
 
 QTreeView::item:selected:active {
-	color: #000;
+	background: #6b6b6b;
+	color: #fff;
+}
+QTreeView::item:selected:active:hover {
+	background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #6b6b6b, stop: 1 #212121); 
+	color: #fff;
 }
 
 QTreeView::item:selected:!active {
-	color: #000;
+	background: #4b4b4b;
+	color: #fff;
 
 }
 
 QTreeWidget::item {
 
 }
-
+/*
 QTreeView#qtvUsers {
 	border: 1px solid #000;
 	padding: 0.2em;
@@ -501,7 +510,7 @@ QTreeView#qtvUsers::item:selected:active {
 QTreeView#qtvUsers::item:selected:!active {
 	color: #000;
 }
-
+*/
 QTreeView#qtvUsers::branch:has-siblings:!adjoins-item {
 /*	border-image: url(skin:branch-vline.png) 0;
 */
