@@ -27,21 +27,28 @@ Notice, sometimes you must restart mumble client to load all images from
 the skin directory - especially when you are missing icons in channel list.
 
 If you have a git installed then clone this repo into the skins/ directory,
-for example
+for example:
+
 ```
 $ cd /home/kaszpir/Apps/Mumble/skins/
 $ git clone https://github.com/nvtkaszpir/mumble-skin-gray.git
 ```
 
+# Tested on
+1. Windows 7
+2. Ubuntu Gnome @ 13.10
+3. Xubuntu - XFCE4 @ 14.04
+
 # ToDo #
-1. Test skin on different platform, tested under Win7 and Ubuntu Gnome.
+1. Test skin on different platforms.
 
 # Known issues #
 1. Channel/User comment shows with standard yellow color in the 
 background, yet the text is gray.
 2. URL links in Dialog boxes are blue.
 3. Bottom area in wizard dialog box is white under Windows.
-
+4. Mac OS X - issues with rendering of the top menu.
+ 
 # License #
 
 http://creativecommons.org/licenses/by-sa/4.0/
